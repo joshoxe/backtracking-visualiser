@@ -1,0 +1,47 @@
+.sudoku-square {
+    border: 2px solid rgba(0, 0, 0, .05) !important;
+}
+
+.one-char {
+    width: 8px;
+}
+
+input {
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    margin: 0;
+    text-align: center;
+    outline: none;
+    font-size: 24px;
+    width: 24px;
+    background: #fbfbf8;
+    overflow: hidden;
+}
+
+table {
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+td {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fbfbf8;
+}
+
+.row {
+    margin: 0;
+}
+
+/* Remove arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+     margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

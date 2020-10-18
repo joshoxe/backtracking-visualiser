@@ -11,15 +11,380 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/index.css">
 
-    <title>Hello, world!</title>
+    <title>Backtracking Visualiser</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+    <div class="container">
+      <div class="row no-gutters justify-content-center my-0">
+          <div class="text-center">
+              <h1 class="display-4">Backtracking Visualiser</h1>
+              <p>Sudoku is a game played in a 9x9 grid, where each position must be a value between 1 and 9, and each column, row and square can not have duplicate numbers.</p>
+              <p>Hit generate to watch the backtracking algorithm <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursively</a> get an answer for any solvable sudoku puzzle.</p>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="A1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="B1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="C1" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C2" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C3" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="A4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="B4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="C4" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C5" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C6" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="A7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="A9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="B7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="B9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="C7" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C8" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="C9" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="row no-gutters justify-content-center">
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="D1" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="D2" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                          <td>
+                              <input id="D3" autocomplete="off" size="2" maxlength="1" type="number" />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="E1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="F1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="D4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="D5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="D6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="E4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="F4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="D7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="D8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="D9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="E7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="E9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="F7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="F9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="row no-gutters justify-content-center">
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="G1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="H1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="I1" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I2" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I3" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="G4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="H4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="I4" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I5" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I6" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive col-2">
+              <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <input id="G7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="G9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="H7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="H9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input id="I7" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I8" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                          <td>
+                              <input id="I9" autocomplete="off" size="2" maxlength="1" type="number"  />
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/cells.js"></script>
   </body>
 </html>

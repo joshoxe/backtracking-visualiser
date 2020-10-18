@@ -29,6 +29,10 @@ td {
     background: #fbfbf8;
 }
 
+#generate-button {
+    margin: 5px;
+}
+
 .row {
     margin: 0;
 }
